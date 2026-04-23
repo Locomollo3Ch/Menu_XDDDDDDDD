@@ -10,12 +10,38 @@ def mostrar_menu():
     print("6. Guardar y salir\n")
     print("="*45)
 
-print(int(input("\nIngrese una opción:\n")))
-
-
 def ejecutar_opción(opción):
-    if opción == "1":
-        xd = 2
-        print(xd)
+    if opción == 1:
+        print("\n---- Consulta web ----")
+
+    elif opción == 2:
+        print("\n---- Consulta de registros ----")
+
+    elif opción == 3:
+        print("\n---- Estadísticas ----")
+
+    elif opción == 4:
+        print("\n---- Gráficas ----")
+
+    elif opción == 5:
+        print("\n---- Borrar registros ----")
+        respuesta = input("¿Está seguro de eliminar todos los registros? (s/n):\n")
+        if respuesta == "s":
+            xd1 = 2 #Son solo para rellenar, al rato es modificado.
+
+        elif respuesta == "n":
+            xd2 = 3
+        
+        else:
+            print("\nError. Ingrese 's' o 'n'.")
+
+    elif opción == 6:
+        print("\nGuardando información...")
+    
+    else:
+        print("\nOpcion no válida. Ingrese un valor entre el 1 al 6.")
+
+def main():
+    xd3=4
 
 print(mostrar_menu())
