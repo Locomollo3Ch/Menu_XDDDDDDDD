@@ -100,28 +100,23 @@ def ejecutar_programa():
                 main()
 
         elif opción == 2:
-            print("\n---- Registros en Memoria ----")
+            print("\n---- Consulta de registros ----")
             if not datos_sismicos:
                 print("No hay datos cargados.")
             else:
-                for idx, sismo in enumerate(datos_sismicos, 1):
-                    print(f"{idx}. {sismo['lugar']} - Mag: {sismo['magnitud']}")
+                Aqui = 1 #aqui va otra cosa
 
         elif opción == 3:
-            print("\n---- Estadísticas de Magnitud ----")
+            print("\n---- Estadísticas ----")
             if datos_sismicos:
-                promedio = stats.calcular_promedio_magnitud(datos_sismicos)
-                maximo = stats.calcular_maximo(datos_sismicos)
-                print(f"Promedio: {promedio:.2f}")
-                print(f"Magnitud Máxima: {maximo}")
+                xd = 2 #Aqui alguien mas
             else:
                 print("Cargue datos primero (Opción 1).")
 
         elif opción == 4:
-            print("\n---- Generando Gráficas... ----")
+            print("\n---- Gráficas ----")
             if datos_sismicos:
-                graphs.generar_graficas(datos_sismicos)
-                print("✅ Gráficas guardadas en la carpeta 'Gráficas/'")
+                xd2 = 3 
             else:
                 print("No hay datos para graficar.")
 
@@ -129,20 +124,19 @@ def ejecutar_programa():
             confirmar = input("\n¿Seguro que desea borrar TODO? (s/n): ").lower()
             if confirmar == 's':
                 datos_sismicos.clear()
-                print("🗑️ Registros eliminados de la memoria.")
+                print("Registros eliminados de la memoria.")
             else:
                 print("Operación cancelada.")
 
         elif opción == 6:
-            print("\nFinalizando y guardando reporte final...")
+            print("\nGuardando información...")
             if datos_sismicos:
-                # Persona 4: Guarda en Excel antes de salir
-                excel_manager.guardar_excel(datos_sismicos)
-            print("👋 Sistema cerrado correctamente.")
+                xd3 = 4 #Aqui falta el excel y por el estilo
+            print("Sistema cerrado correctamente.")
             break
         
         else:
-            print("\n Opción no válida (1-6).")
+            print("\nOpcion no válida. Ingrese un valor entre el 1 al 6.")
 
 if __name__ == "__main__":
     ejecutar_programa()
